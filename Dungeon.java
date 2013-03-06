@@ -12,15 +12,14 @@
          dungeon = new Tile[dungeonWidth][dungeonHeight];
          roomNumber = ((width * height)/100)*66;
          int lastTileType;
-         for (int x = 0; x < width; x++){
-            for (int y = 0; y < height; y++){
-               dungeon[x][y] = new Tile();
-            }
-         }
-         dungeon[0][0].setTileType(1);
-         roomNumber--;
-      	for (int i = 0;i < Math.random()*5;i++){
-				//code
+			int roomWidth = (int)(3+(Math.random()*2));
+			int roomHeight = (int)(3+(Math.random()*2));
+      	for (int x = 0;x < roomWidth;x++){
+				for (int y = 0; x < roomHeight;y++){
+					dungeon[x][y].setTileType(1);
+					lastTileType = 1;
+				}
 			}
+			roomNumber--;
       }
    }
