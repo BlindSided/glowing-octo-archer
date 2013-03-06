@@ -33,10 +33,8 @@
                   retry = true;
                }
          }
-			
-			//print dungeon size
+      	
+      	//print dungeon size
          System.out.println("The size of the dungeon will be " + width + " tiles by " + height + " tiles.");
-			
-			
       }
    }
