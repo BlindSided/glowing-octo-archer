@@ -15,14 +15,18 @@
          int nextRoomDir;
          int lastRoomDir;
       	//making the first room
-         int roomWidth = (3+((int)Math.random()*3));
-         int roomHeight = (3+((int)Math.random()*3));
+         int roomWidth = (3+((int)(Math.random()*3)));
+         int roomHeight = (3+((int)(Math.random()*3)));
+			//System.out.println(roomWidth);
+			//System.out.println(roomHeight);
          int lastRoomWidth = roomWidth;
          int lastRoomHeight = roomHeight;
          int totalWidth = roomWidth;
          int totalHeight = roomHeight;
          for (int x = 0;x < roomWidth;x++){
-            for (int y = 0; x < roomHeight;y++){
+            for (int y = 0; y < roomHeight;y++){
+					//System.out.println(x);
+					//System.out.println(y);
                dungeon[x][y] = new Tile((char)1);
                lastTileType = 1;
                roomNumber--;
@@ -40,7 +44,7 @@
             totalWidth = Math.max(totalWidth, roomWidth);
             totalHeight = totalHeight+roomHeight;
             for (int x = 0;x < roomWidth;x++){
-               for (int y = 0; x < roomHeight;y++){
+               for (int y = 0; y < roomHeight;y++){
                   dungeon[totalWidth-roomWidth+x][totalHeight-roomHeight+y] = new Tile((char)1);
                   lastTileType = 1;
                   roomNumber--;
@@ -61,7 +65,7 @@
             totalWidth = totalWidth+roomWidth;
             totalHeight = Math.max(totalHeight, roomHeight);
             for (int x = 0;x < roomWidth;x++){
-               for (int y = 0; x < roomHeight;y++){
+               for (int y = 0; y < roomHeight;y++){
                   dungeon[totalWidth-roomWidth+x][totalHeight-roomHeight+y] = new Tile((char)1);
                   lastTileType = 1;
                   roomNumber--;
@@ -73,11 +77,11 @@
          }
       }
    	
-   	public char getDungeonTileType(int x, int y){
-			return dungeon[x][y].getTileType();
-		}
-		
-		public boolean getDungeonTileOccupied(int x, int y){
-			return dungeon[x][y].getIsOccupied();
-		}
+      public char getDungeonTileType(int x, int y){
+         return dungeon[x][y].getTileType();
+      }
+   	
+      public boolean getDungeonTileOccupied(int x, int y){
+         return dungeon[x][y].getIsOccupied();
+      }
    }
