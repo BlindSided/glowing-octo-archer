@@ -7,10 +7,7 @@
          int height = 10;
          boolean retry = true;
 			String dir = System.getProperty("user.home") + "/Desktop/";
-			PrintWriter printer = new PrintWriter(dir + "dungeon.txt");
-			printer.write("yolo");
-			printer.close();
-			
+			PrintWriter printer = new PrintWriter(dir + "dungeon.txt");			
       
       //input dungeon Size(width, height)
          Scanner sc = new Scanner(System.in);
@@ -48,8 +45,12 @@
 			Dungeon dungeon = new Dungeon(width, height);
 			
 			//export dungeon
-			System.out.println("Exporting to Dungeon.txt...");
-
+			System.out.println("Exporting to dungeon.txt...");
+			for(int x = width;x > 0;x--){
+				for(int y = height;y > 0;x--){
+					printer.print(dungeon.getDungeonTileType(x, y));
+				}
+			}
 			
       }
    }

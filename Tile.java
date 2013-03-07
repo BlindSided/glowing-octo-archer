@@ -1,19 +1,19 @@
    public class Tile{
-      private int tileType;
+      private char tileType;
       private boolean isOccupied;
    	
       public Tile(){
          tileType=0;
          isOccupied=false;
       }
-   	public Tile(int type){
+   	public Tile(char type){
 			tileType = type;
 			isOccupied=false;
 		}
-   	public int getTileType(){
+   	public char getTileType(){
 			return tileType;
 		}
-		public void setTileType(int type){
+		public void setTileType(char type){
 			this.tileType=type;   
 		}
    	public boolean getIsOccupied(){
