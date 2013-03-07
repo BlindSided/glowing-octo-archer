@@ -2,11 +2,11 @@
 	import java.io.*;
 
    public class DnDgen{
-      public static void main(String[] args){
+      public static void main(String[] args)throws IOException{
          int width = 10;
          int height = 10;
          boolean retry = true;
-			String dir = System.getProperty("user.home") + "/Desktop";
+			String dir = System.getProperty("user.home") + "/Desktop/";
 			PrintWriter printer = new PrintWriter(dir + "dungeon.txt");
 			printer.write("yolo");
 			printer.close();
