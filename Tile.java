@@ -6,7 +6,10 @@
          tileType=0;
          isOccupied=false;
       }
-   	
+   	public Tile(int type){
+			tileType = type;
+			isOccupied=false;
+		}
    	public int getTileType(){
 			return tileType;
 		}
