@@ -1,10 +1,16 @@
    import java.util.*;
+	import java.io.*;
 
    public class DnDgen{
       public static void main(String[] args){
          int width = 10;
          int height = 10;
          boolean retry = true;
+			String dir = System.getProperty("user.home") + "/Desktop";
+			PrintWriter printer = new PrintWriter(dir + "dungeon.txt");
+			printer.write("yolo");
+			printer.close();
+			
       
       //input dungeon Size(width, height)
          Scanner sc = new Scanner(System.in);
@@ -36,5 +42,14 @@
       	
       	//print dungeon size
          System.out.println("The size of the dungeon will be " + width + " tiles by " + height + " tiles.");
+			System.out.println("Generating...");
+			
+			//generate dungeon
+			Dungeon dungeon = new Dungeon(width, height);
+			
+			//export dungeon
+			System.out.println("Exporting to Dungeon.txt...");
+
+			
       }
    }
