@@ -32,11 +32,11 @@
                roomNumber--;
             }
          }
-         nextRoomDir = (int)Math.random()*2;
+         nextRoomDir = (int)(Math.random()*2);
          if (nextRoomDir == 0){
          	//making a hallway
+            dungeon[lastRoomWidth/2][lastRoomHeight] = new Tile((char)1);
             dungeon[lastRoomWidth/2][lastRoomHeight+1] = new Tile((char)1);
-            dungeon[lastRoomWidth/2][lastRoomHeight+2] = new Tile((char)1);
             totalHeight = totalHeight+2;
          	//making a room
             roomWidth = (3+((int)Math.random()*3));
@@ -56,8 +56,8 @@
          }
          if (nextRoomDir == 1){
          	//making a hallway
+            dungeon[roomWidth][roomHeight/2] = new Tile((char)1);
             dungeon[roomWidth+1][roomHeight/2] = new Tile((char)1);
-            dungeon[roomWidth+2][roomHeight/2] = new Tile((char)1);
             totalWidth = totalWidth+2;
          	//making a room
             roomWidth = (3+((int)Math.random()*3));
@@ -77,8 +77,16 @@
          }
       }
    	
-      public char getDungeonTileType(int x, int y){
-         return dungeon[x][y].getTileType();
+      public String getDungeonTileType(int x, int y){
+			//System.out.println(x);
+			//System.out.println(y);
+			if (dungeon[x][y] == null){
+				return " ";
+			}
+         else {
+				//System.out.println(dungeon[x][y].getTileType());
+				return "" + ((int)dungeon[x][y].getTileType());
+			}
       }
    	
       public boolean getDungeonTileOccupied(int x, int y){

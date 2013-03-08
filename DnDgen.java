@@ -46,11 +46,14 @@
 			
 			//export dungeon
 			System.out.println("Exporting to dungeon.txt...");
-			for(int x = width;x > 0;x--){
-				for(int y = height;y > 0;x--){
+			for(int y = height-1;y > 0;y--){
+				for(int x = 0;x < width;x++){
+					//System.out.println(x);
+					//System.out.println(y);
 					printer.print(dungeon.getDungeonTileType(x, y));
 				}
+				printer.println();
 			}
-			
+			printer.close();
       }
    }
